@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FitNova — Modern Wellness & Fitness</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1e1e2f;
+  --text:#f4f4f5;
+  --muted:#a1a1aa;
+  --accent:#3b82f6;
+  --accent2:#9333ea;
+  --card:#2c2c3e;
+  --radius:20px;
+  --shadow:0 12px 28px rgba(0,0,0,0.5);
+  --transition:.5s ease;
+}
+
+/* Global */
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;scroll-behavior:smooth;overflow-x:hidden;position:relative;}
+img{display:block;width:100%;border-radius:var(--radius);}
+button{cursor:pointer;outline:none;}
+
+/* Floating shapes */
+.shape{position:absolute;border-radius:50%;opacity:0.1;z-index:0;pointer-events:none;animation:floatShape 10s ease-in-out infinite alternate;}
+.shape1{width:280px;height:280px;background:linear-gradient(135deg,#3b82f6,#9333ea);top:-60px;left:-60px;}
+.shape2{width:200px;height:200px;background:linear-gradient(135deg,#f97316,#facc15);bottom:60px;right:-70px;}
+.shape3{width:140px;height:140px;background:linear-gradient(135deg,#10b981,#06b6d4);top:320px;right:-70px;}
+@keyframes floatShape{0%{transform:translateY(0);}100%{transform:translateY(30px);}}
+
+/* Header */
+header{background:#2c2c3e;padding:18px 24px;position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 16px rgba(0,0,0,0.5);transition:var(--transition);}
+.logo{font-weight:700;font-size:1.8rem;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+nav a{margin-left:24px;text-decoration:none;color:var(--text);font-weight:600;transition:var(--transition);}
+nav a:hover{color:var(--accent);}
+.cta{padding:12px 24px;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border:none;border-radius:50px;font-weight:700;transition:var(--transition);}
+.cta:hover{opacity:0.9;}
+
+/* Hero */
+.hero{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:100px auto;gap:40px;padding:0 24px;position:relative;z-index:1;}
+.hero-text h1{font-size:3rem;margin-bottom:16px;background:linear-gradient(270deg,#3b82f6,#9333ea,#10b981,#f97316);background-size:800% 800%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:gradientMove 8s ease infinite;font-weight:700;opacity:0;transform:translateY(40px);transition:all .8s;}
+.hero-text p{font-size:1.2rem;color:var(--muted);margin-bottom:20px;opacity:0;transform:translateY(40px);transition:all .8s .2s;}
+.hero-text button{margin-right:12px;padding:12px 24px;border-radius:50px;border:none;font-weight:600;transition:var(--transition);}
+.hero-text .ghost{background:var(--card);border:2px solid var(--accent);color:var(--accent);}
+.hero-text .ghost:hover{background:var(--accent);color:#fff;}
+.hero-img{position:relative;overflow:hidden;border-radius:var(--radius);}
+.hero-img img{border-radius:var(--radius);box-shadow:var(--shadow);max-width:100%;display:block;opacity:0;transform:translateY(40px);transition:all .8s .4s;}
+.hero-img::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg,rgba(255,255,255,0.1),transparent);pointer-events:none;}
+@keyframes gradientMove{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+
+/* Sections */
+section{padding:100px 24px;position:relative;z-index:1;}
+section:nth-child(odd){background:linear-gradient(135deg,#272736,#33334a);}
+section:nth-child(even){background:linear-gradient(135deg,#2c2c3e,#3a3a5c);}
+h2{font-size:2.2rem;margin-bottom:16px;color:var(--accent);text-align:center;opacity:0;transform:translateY(40px);transition:all .8s;}
+p{color:var(--muted);max-width:800px;margin:auto;text-align:center;opacity:0;transform:translateY(40px);transition:all .8s .2s;}
+
+/* Cards & hover */
+.grid{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:40px;}
+.card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform var(--transition), box-shadow var(--transition);opacity:0;transform:translateY(40px);position:relative;}
+.card::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;border-radius:var(--radius);background:linear-gradient(120deg,var(--accent),var(--accent2));opacity:0;transition:opacity var(--transition);}
+.card:hover::before{opacity:0.1;}
+.card:hover{transform:translateY(-10px) scale(1.04);box-shadow:0 20px 40px rgba(0,0,0,0.7);}
+.card img{width:100%;height:200px;object-fit:cover;transition:transform var(--transition);}
+.card:hover img{transform:scale(1.05);}
+.card-body{padding:20px;}
+.card-body h3{margin:0 0 10px;}
+.card-body p{margin:0;color:var(--muted);line-height:1.5;}
+
+/* Modern Equipment Cards */
+.card.equipment:hover{transform:translateY(-12px) scale(1.06);box-shadow:0 24px 50px rgba(0,0,0,0.8);}
+.card.equipment::before{background:linear-gradient(120deg,#10b981,#3b82f6);opacity:0.12;}
+
+/* Pricing */
+.pricing-cards {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.pricing-card {
+  flex: 1 1 280px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background:var(--card);
+  padding:32px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  text-align:center;
+  transition:transform var(--transition), box-shadow var(--transition);
+  opacity:0;
+  transform:translateY(40px);
+}
+.pricing-card:hover{
+  transform:translateY(-12px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.8);
+}
+.pricing-card h3{margin:0 0 15px;}
+.pricing-card .price{font-size:2.2rem;font-weight:700;margin:15px 0;color:var(--accent);}
+.pricing-card ul li{padding:6px 0;color:var(--muted);}
+.pricing-card button{margin-top:16px;padding:12px 28px;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border:none;border-radius:50px;font-weight:600;cursor:pointer;transition:var(--transition);}
+.pricing-card button:hover{opacity:0.9;}
+
+/* Testimonials */
+.testimonial{background:var(--card);padding:40px 24px;border-radius:var(--radius);box-shadow:var(--shadow);margin:20px 0;text-align:center;transition:transform var(--transition), box-shadow var(--transition);opacity:0;transform:translateY(40px);}
+.testimonial:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.7);}
+.testimonial p{font-style:italic;color:var(--text);margin-bottom:12px;}
+.testimonial h4{margin:0;color:var(--accent);}
+
+/* FAQ */
+.faq-item{background:var(--card);padding:18px 22px;border-radius:var(--radius);margin-bottom:14px;box-shadow:var(--shadow);cursor:pointer;transition:all var(--transition);opacity:0;transform:translateY(40px);}
+.faq-item:hover{transform:translateY(-4px);}
+.faq-item h4{margin:0;font-weight:600;}
+.faq-item p{margin:8px 0 0;color:var(--muted);display:none;}
+.faq-item.active p{display:block;}
+
+/* Contact */
+.contact-form{background:var(--card);padding:36px;border-radius:var(--radius);box-shadow:var(--shadow);max-width:600px;margin:auto;display:grid;gap:14px;transition:transform var(--transition), box-shadow var(--transition);}
+.contact-form:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.7);}
+.contact-form input,.contact-form textarea{padding:14px;border:1px solid #444; border-radius:14px;font-size:1rem;resize:none;background:#1e1e2f;color:#f4f4f5;transition:all var(--transition);}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 2px rgba(59,130,246,0.2);}
+.contact-form button{padding:14px;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border:none;border-radius:50px;font-weight:600;transition:var(--transition);}
+.contact-form button:hover{opacity:0.9;}
+
+footer{padding:24px 20px;text-align:center;color:var(--muted);border-top:1px solid #444;position:relative;z-index:1;}
+
+/* Media Queries */
+@media(max-width:768px){
+  .hero{flex-direction:column;text-align:center;}
+  .hero-text button{margin-bottom:12px;}
+  .grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="shape shape1"></div>
+<div class="shape shape2"></div>
+<div class="shape shape3"></div>
+
+<header>
+  <div class="logo">FitNova</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#equipment">Equipment</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+    <button class="cta">Get Started</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Elevate Your Wellness</h1>
+    <p>Achieve your fitness goals with modern programs, expert coaching, and premium equipment.</p>
+    <button class="cta" onclick="scrollToSection('services')">Explore Services</button>
+    <button class="ghost" onclick="scrollToSection('equipment')">View Equipment</button>
+  </div>
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?q=80&w=1600&auto=format&fit=crop" alt="Gym fitness">
+  </div>
+</section>
+
+<section id="about">
+  <h2>About FitNova</h2>
+  <p>At FitNova, we focus on a holistic approach to fitness. Our programs combine strength training, mobility exercises, and recovery strategies to ensure sustainable results for all fitness levels.</p>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1400&auto=format&fit=crop" alt="Personal training">
+      <div class="card-body"><h3>Personal Training</h3><p>Tailored coaching to help you reach goals efficiently.</p></div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1400&auto=format&fit=crop" alt="Yoga">
+      <div class="card-body"><h3>Yoga & Mobility</h3><p>Enhance flexibility and recovery with guided sessions.</p></div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1400&auto=format&fit=crop" alt="Nutrition">
+      <div class="card-body"><h3>Nutrition Coaching</h3><p>Customized meal plans complementing your workouts.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="equipment">
+  <h2>Our Modern Equipment</h2>
+  <p>Explore our state-of-the-art fitness equipment designed to enhance your workouts and help you achieve your goals efficiently.</p>
+  <div class="grid">
+    <div class="card equipment">
+      <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1400&auto=format&fit=crop" alt="Treadmills">
+      <div class="card-body">
+        <h3>Treadmills</h3>
+        <p>High-end treadmills for cardio, endurance, and interval training.</p>
+      </div>
+    </div>
+    <div class="card equipment">
+      <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1400&auto=format&fit=crop" alt="Strength Machines">
+      <div class="card-body">
+        <h3>Strength Machines</h3>
+        <p>Professional equipment for strength training and muscle building.</p>
+      </div>
+    </div>
+    <div class="card equipment">
+      <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1400&auto=format&fit=crop" alt="Free Weights">
+      <div class="card-body">
+        <h3>Free Weights</h3>
+        <p>Dumbbells, kettlebells, and more for versatile workouts.</p>
+      </div>
+    </div>
+    <div class="card equipment">
+      <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1400&auto=format&fit=crop" alt="Functional Training">
+      <div class="card-body">
+        <h3>Functional Training</h3>
+        <p>Equipment for mobility, balance, and high-intensity functional exercises.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <h2>Pricing Plans</h2>
+  <div class="pricing-cards">
+    <div class="pricing-card">
+      <h3>Basic</h3>
+      <div class="price">$29/mo</div>
+      <ul><li>Access to gym equipment</li><li>Group classes</li><li>Monthly consultation</li></ul>
+      <button>Choose Plan</button>
+    </div>
+    <div class="pricing-card">
+      <h3>Pro</h3>
+      <div class="price">$59/mo</div>
+      <ul><li>All Basic features</li><li>Personal training</li><li>Nutrition guidance</li></ul>
+      <button>Choose Plan</button>
+    </div>
+    <div class="pricing-card">
+      <h3>Elite</h3>
+      <div class="price">$99/mo</div>
+      <ul><li>All Pro features</li><li>1-on-1 coaching</li><li>Exclusive workshops</li></ul>
+      <button>Choose Plan</button>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <h2>Testimonials</h2>
+  <div class="grid">
+    <div class="testimonial">
+      <p>"FitNova transformed my fitness journey! The coaching is incredible."</p>
+      <h4>- Alex R.</h4>
+    </div>
+    <div class="testimonial">
+      <p>"Amazing equipment and welcoming environment. Highly recommend!"</p>
+      <h4>- Jamie L.</h4>
+    </div>
+    <div class="testimonial">
+      <p>"Professional guidance helped me stay consistent and reach my goals."</p>
+      <h4>- Morgan K.</h4>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <h2>FAQ</h2>
+  <div class="faq-item" onclick="this.classList.toggle('active')">
+    <h4>What are your operating hours?</h4>
+    <p>We are open Monday-Saturday from 6am to 9pm.</p>
+  </div>
+  <div class="faq-item" onclick="this.classList.toggle('active')">
+    <h4>Do you provide personal training?</h4>
+    <p>Yes, we offer one-on-one personal training plans for all fitness levels.</p>
+  </div>
+  <div class="faq-item" onclick="this.classList.toggle('active')">
+    <h4>Is nutrition guidance included?</h4>
+    <p>Nutrition coaching is included in Pro and Elite plans.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Have questions or want to start your fitness journey? Get in touch!</p>
+  <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! We will reach out soon.')">
+    <input type="text" placeholder="Name" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Message" required style="min-height:120px;"></textarea>
+    <button class="cta" type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>© 2025 FitNova. All rights reserved.</footer>
+
+<script>
+// Animate on scroll
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.style.opacity='1';
+      entry.target.style.transform='translateY(0)';
+    }
+  });
+},{threshold:0.2});
+
+document.querySelectorAll('section h2, section p, .card, .pricing-card, .testimonial, .faq-item, .hero-text h1, .hero-text p, .hero-img img').forEach(el=>{
+  observer.observe(el);
+});
+
+// Smooth scroll buttons
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body>
+</html>
+
