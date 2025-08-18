@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>FitNova — Modern Wellness & Fitness</title>
+<title>Fast Fix — Sauna & Steam Room Experts Dubai</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -58,80 +58,25 @@ section:nth-child(even){background:linear-gradient(135deg,#2c2c3e,#3a3a5c);}
 h2{font-size:2.2rem;margin-bottom:16px;color:var(--accent);text-align:center;opacity:0;transform:translateY(40px);transition:all .8s;}
 p{color:var(--muted);max-width:800px;margin:auto;text-align:center;opacity:0;transform:translateY(40px);transition:all .8s .2s;}
 
-/* Cards & hover */
+/* Cards */
 .grid{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:40px;}
 .card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform var(--transition), box-shadow var(--transition);opacity:0;transform:translateY(40px);position:relative;}
 .card::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;border-radius:var(--radius);background:linear-gradient(120deg,var(--accent),var(--accent2));opacity:0;transition:opacity var(--transition);}
 .card:hover::before{opacity:0.1;}
 .card:hover{transform:translateY(-10px) scale(1.04);box-shadow:0 20px 40px rgba(0,0,0,0.7);}
-.card img{width:100%;height:200px;object-fit:cover;transition:transform var(--transition);}
-.card:hover img{transform:scale(1.05);}
 .card-body{padding:20px;}
 .card-body h3{margin:0 0 10px;}
 .card-body p{margin:0;color:var(--muted);line-height:1.5;}
 
-/* Modern Equipment Cards */
-.card.equipment:hover{transform:translateY(-12px) scale(1.06);box-shadow:0 24px 50px rgba(0,0,0,0.8);}
-.card.equipment::before{background:linear-gradient(120deg,#10b981,#3b82f6);opacity:0.12;}
-
-/* Pricing */
-.pricing-cards {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin-top: 40px;
-}
-.pricing-card {
-  flex: 1 1 280px;
-  max-width: 320px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background:var(--card);
-  padding:32px;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  text-align:center;
-  transition:transform var(--transition), box-shadow var(--transition);
-  opacity:0;
-  transform:translateY(40px);
-}
-.pricing-card:hover{
-  transform:translateY(-12px);
-  box-shadow:0 20px 40px rgba(0,0,0,0.8);
-}
-.pricing-card h3{margin:0 0 15px;}
-.pricing-card .price{font-size:2.2rem;font-weight:700;margin:15px 0;color:var(--accent);}
-.pricing-card ul li{padding:6px 0;color:var(--muted);}
-.pricing-card button{margin-top:16px;padding:12px 28px;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border:none;border-radius:50px;font-weight:600;cursor:pointer;transition:var(--transition);}
-.pricing-card button:hover{opacity:0.9;}
-
-/* Testimonials */
-.testimonial{background:var(--card);padding:40px 24px;border-radius:var(--radius);box-shadow:var(--shadow);margin:20px 0;text-align:center;transition:transform var(--transition), box-shadow var(--transition);opacity:0;transform:translateY(40px);}
-.testimonial:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.7);}
-.testimonial p{font-style:italic;color:var(--text);margin-bottom:12px;}
-.testimonial h4{margin:0;color:var(--accent);}
-
-/* FAQ */
-.faq-item{background:var(--card);padding:18px 22px;border-radius:var(--radius);margin-bottom:14px;box-shadow:var(--shadow);cursor:pointer;transition:all var(--transition);opacity:0;transform:translateY(40px);}
-.faq-item:hover{transform:translateY(-4px);}
-.faq-item h4{margin:0;font-weight:600;}
-.faq-item p{margin:8px 0 0;color:var(--muted);display:none;}
-.faq-item.active p{display:block;}
-
 /* Contact */
 .contact-form{background:var(--card);padding:36px;border-radius:var(--radius);box-shadow:var(--shadow);max-width:600px;margin:auto;display:grid;gap:14px;transition:transform var(--transition), box-shadow var(--transition);}
 .contact-form:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.7);}
-.contact-form input,.contact-form textarea{padding:14px;border:1px solid #444; border-radius:14px;font-size:1rem;resize:none;background:#1e1e2f;color:#f4f4f5;transition:all var(--transition);}
-.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 2px rgba(59,130,246,0.2);}
-.contact-form button{padding:14px;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border:none;border-radius:50px;font-weight:600;transition:var(--transition);}
-.contact-form button:hover{opacity:0.9;}
+.contact-form p{margin:6px 0;}
 
+/* Footer */
 footer{padding:24px 20px;text-align:center;color:var(--muted);border-top:1px solid #444;position:relative;z-index:1;}
 
-/* Media Queries */
+/* Media */
 @media(max-width:768px){
   .hero{flex-direction:column;text-align:center;}
   .hero-text button{margin-bottom:12px;}
@@ -145,159 +90,71 @@ footer{padding:24px 20px;text-align:center;color:var(--muted);border-top:1px sol
 <div class="shape shape3"></div>
 
 <header>
-  <div class="logo">FitNova</div>
+  <div class="logo">Fast Fix</div>
   <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#equipment">Equipment</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">Contact</a>
-    <button class="cta">Get Started</button>
+    <a href="#fastfix">About</a>
+    <a href="#sauna-additionals">Additionals</a>
+    <a href="#sauna-benefits">Benefits</a>
+    <a href="#fastfix-contact">Contact</a>
+     
   </nav>
 </header>
 
 <section class="hero">
   <div class="hero-text">
-    <h1>Elevate Your Wellness</h1>
-    <p>Achieve your fitness goals with modern programs, expert coaching, and premium equipment.</p>
-    <button class="cta" onclick="scrollToSection('services')">Explore Services</button>
-    <button class="ghost" onclick="scrollToSection('equipment')">View Equipment</button>
+    <h1>Sauna & Steam Room Experts in Dubai</h1>
+    <p>Fast Fix ensures your wellness amenities provide consistent therapeutic benefits year-round.</p>
+    <button class="cta" onclick="scrollToSection('fastfix')">Learn More</button>
+    <button class="ghost" onclick="scrollToSection('sauna-benefits')">See Benefits</button>
   </div>
   <div class="hero-img">
-    <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?q=80&w=1600&auto=format&fit=crop" alt="Gym fitness">
+    <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?q=80&w=1600&auto=format&fit=crop" alt="Sauna Steam Room">
   </div>
 </section>
 
-<section id="about">
-  <h2>About FitNova</h2>
-  <p>At FitNova, we focus on a holistic approach to fitness. Our programs combine strength training, mobility exercises, and recovery strategies to ensure sustainable results for all fitness levels.</p>
-</section>
-
-<section id="services">
-  <h2>Our Services</h2>
+<section id="fastfix">
+  <h2>Fast Fix Technical Services LLC</h2>
+  <p>Luxury wellness features like saunas and steam rooms represent significant investments that demand specialised maintenance to preserve their functionality, appearance, and safety.</p>
   <div class="grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1400&auto=format&fit=crop" alt="Personal training">
-      <div class="card-body"><h3>Personal Training</h3><p>Tailored coaching to help you reach goals efficiently.</p></div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1400&auto=format&fit=crop" alt="Yoga">
-      <div class="card-body"><h3>Yoga & Mobility</h3><p>Enhance flexibility and recovery with guided sessions.</p></div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1400&auto=format&fit=crop" alt="Nutrition">
-      <div class="card-body"><h3>Nutrition Coaching</h3><p>Customized meal plans complementing your workouts.</p></div>
-    </div>
+    <div class="card"><div class="card-body"><h3>Why Choose Fast Fix?</h3><p>We understand that these complex systems require expert knowledge of both their technical components and the unique challenges posed by Dubai’s climate.</p></div></div>
+    <div class="card"><div class="card-body"><h3>Expert Maintenance</h3><p>Our specialised sauna and steam room maintenance team delivers comprehensive care that extends equipment lifespan, ensures hygienic conditions, and maintains optimal performance.</p></div></div>
   </div>
 </section>
 
-<section id="equipment">
-  <h2>Our Modern Equipment</h2>
-  <p>Explore our state-of-the-art fitness equipment designed to enhance your workouts and help you achieve your goals efficiently.</p>
+<section id="sauna-additionals">
+  <h2>Additionals for Sauna Room</h2>
   <div class="grid">
-    <div class="card equipment">
-      <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1400&auto=format&fit=crop" alt="Treadmills">
-      <div class="card-body">
-        <h3>Treadmills</h3>
-        <p>High-end treadmills for cardio, endurance, and interval training.</p>
-      </div>
-    </div>
-    <div class="card equipment">
-      <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1400&auto=format&fit=crop" alt="Strength Machines">
-      <div class="card-body">
-        <h3>Strength Machines</h3>
-        <p>Professional equipment for strength training and muscle building.</p>
-      </div>
-    </div>
-    <div class="card equipment">
-      <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1400&auto=format&fit=crop" alt="Free Weights">
-      <div class="card-body">
-        <h3>Free Weights</h3>
-        <p>Dumbbells, kettlebells, and more for versatile workouts.</p>
-      </div>
-    </div>
-    <div class="card equipment">
-      <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1400&auto=format&fit=crop" alt="Functional Training">
-      <div class="card-body">
-        <h3>Functional Training</h3>
-        <p>Equipment for mobility, balance, and high-intensity functional exercises.</p>
-      </div>
-    </div>
+    <div class="card"><div class="card-body"><h3>Emergency Push Button</h3><p>Safety-first feature for immediate assistance.</p></div></div>
+    <div class="card"><div class="card-body"><h3>Decorative Stone</h3><p>Enhances the aesthetics behind the heater.</p></div></div>
+    <div class="card"><div class="card-body"><h3>Himalayan Salt</h3><p>Promotes relaxation and purifies the air.</p></div></div>
+    <div class="card"><div class="card-body"><h3>Optical Fibre Lights</h3><p>Modern ambient lighting for a luxurious sauna feel.</p></div></div>
+    <div class="card"><div class="card-body"><h3>Air Vent Unit</h3><p>Ensures proper airflow and temperature balance.</p></div></div>
+    <div class="card"><div class="card-body"><h3>Speaker</h3><p>Enjoy soothing music while you relax.</p></div></div>
   </div>
 </section>
 
-<section id="pricing">
-  <h2>Pricing Plans</h2>
-  <div class="pricing-cards">
-    <div class="pricing-card">
-      <h3>Basic</h3>
-      <div class="price">$29/mo</div>
-      <ul><li>Access to gym equipment</li><li>Group classes</li><li>Monthly consultation</li></ul>
-      <button>Choose Plan</button>
-    </div>
-    <div class="pricing-card">
-      <h3>Pro</h3>
-      <div class="price">$59/mo</div>
-      <ul><li>All Basic features</li><li>Personal training</li><li>Nutrition guidance</li></ul>
-      <button>Choose Plan</button>
-    </div>
-    <div class="pricing-card">
-      <h3>Elite</h3>
-      <div class="price">$99/mo</div>
-      <ul><li>All Pro features</li><li>1-on-1 coaching</li><li>Exclusive workshops</li></ul>
-      <button>Choose Plan</button>
-    </div>
-  </div>
-</section>
-
-<section id="testimonials">
-  <h2>Testimonials</h2>
+<section id="sauna-benefits">
+  <h2>Benefits of Sauna & Steam Room</h2>
   <div class="grid">
-    <div class="testimonial">
-      <p>"FitNova transformed my fitness journey! The coaching is incredible."</p>
-      <h4>- Alex R.</h4>
-    </div>
-    <div class="testimonial">
-      <p>"Amazing equipment and welcoming environment. Highly recommend!"</p>
-      <h4>- Jamie L.</h4>
-    </div>
-    <div class="testimonial">
-      <p>"Professional guidance helped me stay consistent and reach my goals."</p>
-      <h4>- Morgan K.</h4>
-    </div>
+    <div class="card"><div class="card-body"><h3>Skin Purification</h3><p>Cleanses pores and removes impurities.</p></div></div>
+    <div class="card"><div class="card-body"><h3>Muscle Relaxation</h3><p>Relieves tension and soothes sore muscles.</p></div></div>
+    <div class="card"><div class="card-body"><h3>Stress Reduction</h3><p>Promotes endorphin release to ease stress.</p></div></div>
+    <div class="card"><div class="card-body"><h3>Post-Exercise Recovery</h3><p>Aids recovery after intense workouts.</p></div></div>
+    <div class="card"><div class="card-body"><h3>Sinus Relief</h3><p>Opens sinuses and eases congestion.</p></div></div>
   </div>
 </section>
 
-<section id="faq">
-  <h2>FAQ</h2>
-  <div class="faq-item" onclick="this.classList.toggle('active')">
-    <h4>What are your operating hours?</h4>
-    <p>We are open Monday-Saturday from 6am to 9pm.</p>
-  </div>
-  <div class="faq-item" onclick="this.classList.toggle('active')">
-    <h4>Do you provide personal training?</h4>
-    <p>Yes, we offer one-on-one personal training plans for all fitness levels.</p>
-  </div>
-  <div class="faq-item" onclick="this.classList.toggle('active')">
-    <h4>Is nutrition guidance included?</h4>
-    <p>Nutrition coaching is included in Pro and Elite plans.</p>
+<section id="fastfix-contact">
+  <h2>Contact Fast Fix</h2>
+  <p>For enquiries and maintenance services, reach out to our team:</p>
+  <div class="contact-form">
+    <p><strong>Email:</strong></p>
+    <p>Info@fastfixdxb.com</p>
+    <p>Sales@fastfixdxb.com</p>
   </div>
 </section>
 
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p>Have questions or want to start your fitness journey? Get in touch!</p>
-  <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! We will reach out soon.')">
-    <input type="text" placeholder="Name" required>
-    <input type="email" placeholder="Email" required>
-    <textarea placeholder="Message" required style="min-height:120px;"></textarea>
-    <button class="cta" type="submit">Send Message</button>
-  </form>
-</section>
-
-<footer>© 2025 FitNova. All rights reserved.</footer>
+<footer>© 2025 Fast Fix Technical Services LLC. All rights reserved.</footer>
 
 <script>
 // Animate on scroll
@@ -310,7 +167,7 @@ const observer = new IntersectionObserver(entries=>{
   });
 },{threshold:0.2});
 
-document.querySelectorAll('section h2, section p, .card, .pricing-card, .testimonial, .faq-item, .hero-text h1, .hero-text p, .hero-img img').forEach(el=>{
+document.querySelectorAll('section h2, section p, .card, .hero-text h1, .hero-text p, .hero-img img').forEach(el=>{
   observer.observe(el);
 });
 
@@ -321,4 +178,3 @@ function scrollToSection(id){
 </script>
 </body>
 </html>
-
