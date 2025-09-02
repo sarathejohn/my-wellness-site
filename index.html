@@ -7,88 +7,255 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg:#1e1e2f;
-  --text:#f4f4f5;
-  --muted:#a1a1aa;
-  --accent:#3b82f6;
-  --accent2:#9333ea;
-  --card:#2c2c3e;
+  --bg:#f8f5f1;          /* light stone */
+  --bg-alt:#f2ece6;      /* slightly darker stone */
+  --card:#ffffff;        /* white card */
+  --text:#2e2a27;        /* deep brown text */
+  --muted:#6e645f;       /* warm muted text */
+  --accent:#c89b3c;      /* gold accent */
+  --accent2:#9e7c3a;     /* darker gold */
   --radius:20px;
-  --shadow:0 12px 28px rgba(0,0,0,0.5);
+  --shadow:0 12px 28px rgba(0,0,0,0.1);
   --transition:.5s ease;
 }
 
 /* Global */
 *{box-sizing:border-box;}
-body{margin:0;font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;scroll-behavior:smooth;overflow-x:hidden;position:relative;}
+body{
+  margin:0;
+  font-family:'Montserrat',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  scroll-behavior:smooth;
+  overflow-x:hidden;
+  position:relative;
+}
 img{display:block;width:100%;border-radius:var(--radius);}
 button{cursor:pointer;outline:none;}
 
-/* Floating shapes */
-.shape{position:absolute;border-radius:50%;opacity:0.1;z-index:0;pointer-events:none;animation:floatShape 10s ease-in-out infinite alternate;}
-.shape1{width:280px;height:280px;background:linear-gradient(135deg,#3b82f6,#9333ea);top:-60px;left:-60px;}
-.shape2{width:200px;height:200px;background:linear-gradient(135deg,#f97316,#facc15);bottom:60px;right:-70px;}
-.shape3{width:140px;height:140px;background:linear-gradient(135deg,#10b981,#06b6d4);top:320px;right:-70px;}
-@keyframes floatShape{0%{transform:translateY(0);}100%{transform:translateY(30px);}}
-
 /* Header */
-header{background:#2c2c3e;padding:18px 24px;position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 16px rgba(0,0,0,0.5);transition:var(--transition);}
-.logo{font-weight:700;font-size:1.8rem;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-nav a{margin-left:24px;text-decoration:none;color:var(--text);font-weight:600;transition:var(--transition);}
-nav a:hover{color:var(--accent);}
-.cta{padding:12px 24px;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border:none;border-radius:50px;font-weight:700;transition:var(--transition);}
+header{
+  background:var(--bg-alt);
+  padding:18px 24px;
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 4px 16px rgba(0,0,0,0.1);
+  transition:var(--transition);
+}
+.logo{
+  font-weight:700;
+  font-size:1.8rem;
+  color:var(--accent);
+}
+nav a{
+  margin-left:24px;
+  text-decoration:none;
+  color:var(--text);
+  font-weight:600;
+  transition:var(--transition);
+}
+nav a:hover{
+  color:var(--accent);
+}
+.cta{
+  padding:12px 24px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  color:#fff;
+  border:none;
+  border-radius:50px;
+  font-weight:700;
+  transition:var(--transition);
+}
 .cta:hover{opacity:0.9;}
 
 /* Hero */
-.hero{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:100px auto;gap:40px;padding:0 24px;position:relative;z-index:1;}
-.hero-text h1{font-size:3rem;margin-bottom:16px;background:linear-gradient(270deg,#3b82f6,#9333ea,#10b981,#f97316);background-size:800% 800%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:gradientMove 8s ease infinite;font-weight:700;opacity:0;transform:translateY(40px);transition:all .8s;}
-.hero-text p{font-size:1.2rem;color:var(--muted);margin-bottom:20px;opacity:0;transform:translateY(40px);transition:all .8s .2s;}
-.hero-text button{margin-right:12px;padding:12px 24px;border-radius:50px;border:none;font-weight:600;transition:var(--transition);}
-.hero-text .ghost{background:var(--card);border:2px solid var(--accent);color:var(--accent);}
-.hero-text .ghost:hover{background:var(--accent);color:#fff;}
-.hero-img{position:relative;overflow:hidden;border-radius:var(--radius);}
-.hero-img img{border-radius:var(--radius);box-shadow:var(--shadow);max-width:100%;display:block;opacity:0;transform:translateY(40px);transition:all .8s .4s;}
-.hero-img::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg,rgba(255,255,255,0.1),transparent);pointer-events:none;}
-@keyframes gradientMove{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  max-width:1200px;
+  margin:100px auto;
+  gap:40px;
+  padding:0 24px;
+  position:relative;
+  z-index:1;
+}
+.hero-text h1{
+  font-size:3rem;
+  margin-bottom:16px;
+  background:linear-gradient(270deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  font-weight:700;
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s;
+}
+.hero-text p{
+  font-size:1.2rem;
+  color:var(--muted);
+  margin-bottom:20px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s .2s;
+}
+.hero-text button{
+  margin-right:12px;
+  padding:12px 24px;
+  border-radius:50px;
+  border:none;
+  font-weight:600;
+  transition:var(--transition);
+}
+.hero-text .ghost{
+  background:transparent;
+  border:2px solid var(--accent);
+  color:var(--accent);
+}
+.hero-text .ghost:hover{
+  background:var(--accent);
+  color:#fff;
+}
+.hero-img img{
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  max-width:100%;
+  display:block;
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s .4s;
+}
 
 /* Sections */
-section{padding:100px 24px;position:relative;z-index:1;}
-section:nth-child(odd){background:linear-gradient(135deg,#272736,#33334a);}
-section:nth-child(even){background:linear-gradient(135deg,#2c2c3e,#3a3a5c);}
-h2{font-size:2.2rem;margin-bottom:16px;color:var(--accent);text-align:center;opacity:0;transform:translateY(40px);transition:all .8s;}
-p{color:var(--muted);max-width:800px;margin:auto;text-align:center;opacity:0;transform:translateY(40px);transition:all .8s .2s;}
+section{
+  padding:100px 24px;
+  position:relative;
+  z-index:1;
+}
+section:nth-child(odd){
+  background:var(--bg);
+}
+section:nth-child(even){
+  background:var(--bg-alt);
+}
+h2{
+  font-size:2.2rem;
+  margin-bottom:16px;
+  color:var(--accent);
+  text-align:center;
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s;
+}
+p{
+  color:var(--muted);
+  max-width:800px;
+  margin:auto;
+  text-align:center;
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s .2s;
+}
 
 /* Cards */
-.grid{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:40px;}
-.card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform var(--transition), box-shadow var(--transition);opacity:0;transform:translateY(40px);position:relative;}
-.card::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;border-radius:var(--radius);background:linear-gradient(120deg,var(--accent),var(--accent2));opacity:0;transition:opacity var(--transition);}
-.card:hover::before{opacity:0.1;}
-.card:hover{transform:translateY(-10px) scale(1.04);box-shadow:0 20px 40px rgba(0,0,0,0.7);}
-.card-body{padding:20px;}
-.card-body h3{margin:0 0 10px;}
-.card-body p{margin:0;color:var(--muted);line-height:1.5;}
+.grid{
+  display:grid;
+  gap:30px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  margin-top:40px;
+}
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:transform var(--transition), box-shadow var(--transition);
+  opacity:0;
+  transform:translateY(40px);
+  position:relative;
+}
+.card:hover{
+  transform:translateY(-10px) scale(1.04);
+  box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+.card-body{
+  padding:20px;
+}
+.card-body h3{
+  margin:0 0 10px;
+  color:var(--accent);
+}
+.card-body p{
+  margin:0;
+  color:var(--muted);
+}
 
 /* Contact */
-.contact-form{background:var(--card);padding:36px;border-radius:var(--radius);box-shadow:var(--shadow);max-width:600px;margin:auto;display:grid;gap:14px;transition:transform var(--transition), box-shadow var(--transition);}
-.contact-form:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.7);}
+.contact-form{
+  background:var(--card);
+  padding:36px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  max-width:600px;
+  margin:auto;
+  display:grid;
+  gap:14px;
+  transition:transform var(--transition), box-shadow var(--transition);
+}
+.contact-form:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
 .contact-form p{margin:6px 0;}
 
 /* Footer */
-footer{padding:24px 20px;text-align:center;color:var(--muted);border-top:1px solid #444;position:relative;z-index:1;}
+footer{
+  padding:24px 20px;
+  text-align:center;
+  color:var(--muted);
+  border-top:1px solid #ddd;
+  position:relative;
+  z-index:1;
+}
+.social-links{
+  margin:12px 0;
+}
+.social-links a{
+  display:inline-block;
+  margin:0 10px;
+}
+.social-links img{
+  width:32px;
+  height:32px;
+  filter:brightness(0.3);
+  transition:transform .3s;
+}
+.social-links img:hover{
+  transform:scale(1.1);
+  filter:brightness(0) sepia(1) saturate(5) hue-rotate(20deg);
+}
 
 /* Media */
 @media(max-width:768px){
-  .hero{flex-direction:column;text-align:center;}
-  .hero-text button{margin-bottom:12px;}
-  .grid{grid-template-columns:1fr;}
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+  .hero-text button{
+    margin-bottom:12px;
+  }
+  .grid{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
 <body>
-<div class="shape shape1"></div>
-<div class="shape shape2"></div>
-<div class="shape shape3"></div>
-
 <header>
   <div class="logo">Fast Fix</div>
   <nav>
@@ -96,7 +263,6 @@ footer{padding:24px 20px;text-align:center;color:var(--muted);border-top:1px sol
     <a href="#sauna-additionals">Additionals</a>
     <a href="#sauna-benefits">Benefits</a>
     <a href="#fastfix-contact">Contact</a>
-     
   </nav>
 </header>
 
@@ -116,8 +282,8 @@ footer{padding:24px 20px;text-align:center;color:var(--muted);border-top:1px sol
   <h2>Fast Fix Technical Services LLC</h2>
   <p>Luxury wellness features like saunas and steam rooms represent significant investments that demand specialised maintenance to preserve their functionality, appearance, and safety.</p>
   <div class="grid">
-    <div class="card"><div class="card-body"><h3>Why Choose Fast Fix?</h3><p>We understand that these complex systems require expert knowledge of both their technical components and the unique challenges posed by Dubai’s climate.</p></div></div>
-    <div class="card"><div class="card-body"><h3>Expert Maintenance</h3><p>Our specialised sauna and steam room maintenance team delivers comprehensive care that extends equipment lifespan, ensures hygienic conditions, and maintains optimal performance.</p></div></div>
+    <div class="card"><div class="card-body"><h3>Why Choose Us?</h3><p>We understand these systems require expert knowledge of technical components and the unique challenges of Dubai’s climate.</p></div></div>
+    <div class="card"><div class="card-body"><h3>Expert Maintenance</h3><p>Our team delivers care that extends equipment lifespan, ensures hygienic conditions, and maintains optimal performance.</p></div></div>
   </div>
 </section>
 
@@ -127,9 +293,7 @@ footer{padding:24px 20px;text-align:center;color:var(--muted);border-top:1px sol
     <div class="card"><div class="card-body"><h3>Emergency Push Button</h3><p>Safety-first feature for immediate assistance.</p></div></div>
     <div class="card"><div class="card-body"><h3>Decorative Stone</h3><p>Enhances the aesthetics behind the heater.</p></div></div>
     <div class="card"><div class="card-body"><h3>Himalayan Salt</h3><p>Promotes relaxation and purifies the air.</p></div></div>
-    <div class="card"><div class="card-body"><h3>Optical Fibre Lights</h3><p>Modern ambient lighting for a luxurious sauna feel.</p></div></div>
-    <div class="card"><div class="card-body"><h3>Air Vent Unit</h3><p>Ensures proper airflow and temperature balance.</p></div></div>
-    <div class="card"><div class="card-body"><h3>Speaker</h3><p>Enjoy soothing music while you relax.</p></div></div>
+    <div class="card"><div class="card-body"><h3>Optical Fibre Lights</h3><p>Modern ambient lighting for a luxurious feel.</p></div></div>
   </div>
 </section>
 
@@ -139,14 +303,12 @@ footer{padding:24px 20px;text-align:center;color:var(--muted);border-top:1px sol
     <div class="card"><div class="card-body"><h3>Skin Purification</h3><p>Cleanses pores and removes impurities.</p></div></div>
     <div class="card"><div class="card-body"><h3>Muscle Relaxation</h3><p>Relieves tension and soothes sore muscles.</p></div></div>
     <div class="card"><div class="card-body"><h3>Stress Reduction</h3><p>Promotes endorphin release to ease stress.</p></div></div>
-    <div class="card"><div class="card-body"><h3>Post-Exercise Recovery</h3><p>Aids recovery after intense workouts.</p></div></div>
-    <div class="card"><div class="card-body"><h3>Sinus Relief</h3><p>Opens sinuses and eases congestion.</p></div></div>
   </div>
 </section>
 
 <section id="fastfix-contact">
   <h2>Contact Fast Fix</h2>
-  <p>For enquiries and maintenance services, reach out to our team:</p>
+  <p>Reach out for enquiries and maintenance services:</p>
   <div class="contact-form">
     <p><strong>Email:</strong></p>
     <p>Info@fastfixdxb.com</p>
@@ -154,7 +316,20 @@ footer{padding:24px 20px;text-align:center;color:var(--muted);border-top:1px sol
   </div>
 </section>
 
-<footer>© 2025 Fast Fix Technical Services LLC. All rights reserved.</footer>
+<footer>
+  <div class="social-links">
+    <a href="https://www.facebook.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+    </a>
+    <a href="https://www.instagram.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
+    </a>
+    <a href="https://www.linkedin.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn">
+    </a>
+  </div>
+  © 2025 Fast Fix Technical Services LLC. All rights reserved.
+</footer>
 
 <script>
 // Animate on scroll
@@ -171,7 +346,7 @@ document.querySelectorAll('section h2, section p, .card, .hero-text h1, .hero-te
   observer.observe(el);
 });
 
-// Smooth scroll buttons
+// Smooth scroll
 function scrollToSection(id){
   document.getElementById(id).scrollIntoView({behavior:'smooth'});
 }
